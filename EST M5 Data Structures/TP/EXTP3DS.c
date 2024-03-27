@@ -100,3 +100,66 @@ void trier (File *f1,File *f2,File *f3){
         }
     }
 }
+
+
+// main function
+int main(){
+    File f1,f2,f3;
+    initialiser(&f1);
+    initialiser(&f2);
+    initialiser(&f3);
+    // add element:
+    enfiler(&f1,5);
+    enfiler(&f1,4);
+    enfiler(&f1,9);
+    enfiler(&f1,8);
+    enfiler(&f1,3);
+    // trier f1
+    trier(&f1,&f2,&f3);
+    int max_element = INT_MIN;
+    while(!FileVide(&f2)){
+        int element = defiler(&f2);
+        printf("%d",element);
+        if(element > max_element){
+            max_element = element;
+        }
+    }
+    printf("\n");
+    // afficher le plus grand element
+    printf("le plus grand element est:");
+    if(max_element != INT_MIN){
+        printf("%d\n",max_element);
+    }
+    else{
+        printf("la file est vide.\n");
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// void FileVide(LSC *file)
+// {
+//     file->start = -1;
+//     file->end = -1;
+// }
+// void Enfiler(LSC *file,int element){
+
+// }
+// prototype
+
+// void FileVide();
+// void Enfiler();
+// void Defiler();
+// void DefilerEnfiler();
+// void Comparer();
+//
