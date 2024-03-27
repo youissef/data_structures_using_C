@@ -81,7 +81,7 @@ int comparer(File *file1, File *file2)
 }
 void trier (File *f1,File *f2,File *f3){
     while (!fileVide(f1)){
-        int max_element = int_MIN;
+        int max_element = INT_MIN;
         while (!fileVide(f1)){
             int element = defiler(f1);
             if (element > max_element){
@@ -89,43 +89,14 @@ void trier (File *f1,File *f2,File *f3){
             } 
             enfiler(f3,element);       
         }
-    }
-
-    while(!fileVide(f3)){
-        int element=defiler(f3);
+        while(!fileVide(f3)){
+        int element = defiler(f3);
+        if(element != max_element){
+            enfiler(f1, element);
+        }
+        else{
+            enfiler(f2, element);
+        }
+        }
     }
 }
-
-
-// main function
-int main(){
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-// void FileVide(LSC *file)
-// {
-//     file->start = -1;
-//     file->end = -1;
-// }
-// void Enfiler(LSC *file,int element){
-
-// }
-// prototype
-
-// void FileVide();
-// void Enfiler();
-// void Defiler();
-// void DefilerEnfiler();
-// void Comparer();
-//
